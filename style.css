@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* GENERAL */
 body {
     margin: 0;
@@ -209,3 +210,197 @@ body {
   box-shadow: none;
   border-radius: 0;
 }
+=======
+/* GENERAL */
+body {
+    margin: 0;
+    background: #0a0a0f;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e8e8e8;
+}
+
+.section {
+    padding: 80px 12%;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #7bdcff;
+    text-shadow: 0 0 10px #7bdcff;
+}
+
+.dark-card {
+    background: #11131a;
+    border-radius: 14px;
+    padding: 60px 12%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px 12%;
+    display: flex;
+    justify-content: space-between;
+    background: #0c0d11cc;
+    backdrop-filter: blur(6px);
+}
+
+.navbar a {
+    margin-left: 25px;
+    font-size: 0.9rem;
+    color: #bfeeff;
+    text-decoration: none;
+}
+
+.nav-left {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #69e4ff;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 12%;
+}
+
+.glow-text {
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #84f3ff;
+    text-shadow: 0 0 30px #46dbff;
+}
+
+.hero-photo .photo-frame {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #46cfff;
+    box-shadow: 0 0 18px #46cfff;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 26px;
+    background: linear-gradient(90deg, #00c9ff, #00a2ff);
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skill-item {
+    padding: 14px;
+    background: #1a1d27;
+    border: 1px solid #2a2e3d;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* PROJECT CARDS */
+.project-card {
+    background: #13141c;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #262b39;
+}
+
+.project-card h3 {
+    color: #7bdcff;
+}
+
+/* CONTACT */
+.contact-grid p {
+    margin: 8px 0;
+}
+
+/* MODALS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: #11131a;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 70%;
+    max-width: 800px;
+    box-shadow: 0 0 20px #00c8ff80;
+}
+
+.close {
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #7bdcff;
+}
+
+.modal-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 1px solid #222836;
+}
+/* EXPERIENCE SECTION */
+.experience-card {
+    background: #13141c;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #262b39;
+    margin-top: 20px;
+}
+
+.experience-card h3 {
+    color: #7bdcff;
+    margin-bottom: 5px;
+}
+
+.experience-card h4 {
+    margin-top: 0;
+    font-weight: 400;
+    color: #a3bccc;
+}
+
+.experience-list {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.experience-list li {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+>>>>>>> 066078b20fa5685e21559c5410da56a81c571fd8
