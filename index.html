@@ -4,20 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Immanuel Gnanaseelan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="brand">IG</div>
+      <a class="brand" href="#home">IG</a>
       <nav class="links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#experience">Professional Experience</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
@@ -26,13 +28,13 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section id="home" class="hero">
+    <section id="home" class="hero section-reveal">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1 class="title">Immanuel<br />Gnanaseelan</h1>
-          <p class="subtitle">Software Engineering Student @ Toronto Metropolitan University</p>
-          <p class="lead">Building reliable, scalable, and efficient systems with modern software tools.</p>
+          <p class="eyebrow">Software Engineering Student</p>
+          <h1 class="title">Immanuel Gnanaseelan</h1>
+          <p class="subtitle">Toronto Metropolitan University</p>
+          <p class="lead">I build reliable, scalable software experiences across mobile, backend APIs, and quality-focused engineering workflows.</p>
           <div class="hero-actions">
             <a class="btn" href="#projects">View Projects</a>
             <a class="btn ghost" href="#contact">Contact</a>
@@ -40,94 +42,132 @@
         </div>
 
         <div class="avatar" aria-label="Profile photo">
-          <!-- Put your real photo here (or keep placeholder.jpg) -->
           <img src="Assets/professionalPicture.jpg" alt="Immanuel Gnanaseelan" />
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="section section-reveal">
       <div class="container">
         <h2 class="h2">About</h2>
         <p class="text">
-          I’m a fourth-year Software Engineering student at Toronto Metropolitan University with hands-on experience across
-          software systems, data structures, digital systems, and full-stack development. I’ve built projects using Java, C#,
-          Python, SQL, JavaScript, VHDL, AWS S3, Git/GitHub, and Jira.
+          I am a fourth-year Software Engineering student at Toronto Metropolitan University with hands-on experience in software systems,
+          data structures, full-stack development, and quality assurance.
         </p>
         <p class="text">
-          I’m focused on reliability, performance, and clean engineering design, and I’ve also worked in QA testing for
-          enterprise applications—validating functionality across devices, documenting issues clearly, and collaborating with teams to improve quality.
+          I have built projects using Java, Python, C#, TypeScript, JavaScript, SQL, and VHDL, and I enjoy shipping systems that are clear,
+          dependable, and practical for real users.
         </p>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section surface">
+    <section id="skills" class="section surface section-reveal">
       <div class="container">
         <h2 class="h2">Skills</h2>
         <div class="grid skills">
           <div class="chip">Java</div>
-          <div class="chip">C#</div>
           <div class="chip">Python</div>
-          <div class="chip">SQL</div>
+          <div class="chip">C#</div>
+          <div class="chip">TypeScript</div>
           <div class="chip">JavaScript</div>
+          <div class="chip">SQL</div>
           <div class="chip">VHDL</div>
-          <div class="chip">AWS (S3)</div>
-          <div class="chip">Git / GitHub</div>
+          <div class="chip">React Native</div>
+          <div class="chip">ASP.NET Core</div>
+          <div class="chip">Supabase</div>
           <div class="chip">Jira</div>
+          <div class="chip">Git / GitHub</div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section surface">
+    <section id="experience" class="section section-reveal">
       <div class="container">
-        <h2 class="h2">Experience</h2>
+        <h2 class="h2">Professional Experience</h2>
 
-        <div class="card" style="text-align:left;">
-          <h3 style="margin-bottom:6px;">Software Quality Assurance Engineer — GenesisCircle</h3>
-          <p class="text muted" style="margin-top:0; margin-bottom:14px;">
-            May 2025 – Sept. 2025 • Fort Erie, ON
-          </p>
+        <div class="experience-timeline">
+          <article class="exp-card">
+            <div class="exp-head">
+              <div>
+                <h3>Mobile Application Developer</h3>
+                <p class="exp-company">Dominance Forbes Foundation Inc.</p>
+              </div>
+              <p class="exp-meta">Toronto, ON | Feb 2026 - Apr 2026</p>
+            </div>
+            <ul class="exp-points">
+              <li>Developed a cross-platform React Native and Expo prototype supporting wellness, mentorship, and economic empowerment initiatives.</li>
+              <li>Created system architecture artifacts including context diagrams, component diagrams, and a risk register before development execution.</li>
+              <li>Implemented secure authentication (email/OAuth), role-based access control, multilingual support, and onboarding user flows.</li>
+              <li>Built mental health, workout partner matching, persona profile, and event discovery modules with Supabase Auth, PostgreSQL, and Row Level Security.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>React Native</span><span>Expo</span><span>TypeScript</span><span>Supabase</span>
+            </div>
+          </article>
 
-          <ul class="text" style="margin:0; padding-left:18px;">
-            <li>Performed functional and usability testing on enterprise fleet management software across multiple device types.</li>
-            <li>Identified, documented, and categorized software bugs, supplying actionable reports to developers.</li>
-            <li>Used <strong>Jira</strong> for bug tracking, workflow management, and ensuring milestone completion.</li>
-            <li>Collaborated with QA and dev teams to validate updates, maintain app stability, and improve UI/UX performance.</li>
-            <li>Resolved customer tickets efficiently and supported users in understanding new features and system updates.</li>
-          </ul>
+          <article class="exp-card">
+            <div class="exp-head">
+              <div>
+                <h3>Customer Training and Quality Assurance Specialist</h3>
+                <p class="exp-company">BoardQMS Solutions Inc.</p>
+              </div>
+              <p class="exp-meta">Toronto, ON | Jan 2026 - Mar 2026</p>
+            </div>
+            <ul class="exp-points">
+              <li>Produced user guides and narrated training demos for DML and Change Request workflows to improve platform adoption.</li>
+              <li>Executed QA testing across Training Matrix and Document Control modules and documented defects with clear reproducible steps.</li>
+              <li>Validated UI and UX improvements with stakeholders to improve product clarity, usability, and release confidence.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>QA Testing</span><span>User Training</span><span>Documentation</span><span>Stakeholder Collaboration</span>
+            </div>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-head">
+              <div>
+                <h3>Software Quality Assurance Engineer</h3>
+                <p class="exp-company">GenesisCircle</p>
+              </div>
+              <p class="exp-meta">Fort Erie, ON | May 2025 - Sept 2025</p>
+            </div>
+            <ul class="exp-points">
+              <li>Conducted functional and usability testing across enterprise fleet management workflows and device types.</li>
+              <li>Logged and prioritized defects in Jira and collaborated with developers to validate fixes and reduce regressions.</li>
+              <li>Supported customer issue resolution and helped users adopt new product features and updates.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Jira</span><span>Functional Testing</span><span>Usability Testing</span><span>Customer Support</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
+    <section id="projects" class="section surface section-reveal">
       <div class="container">
         <h2 class="h2">Projects</h2>
 
         <div class="project-grid">
           <button class="card" data-modal="modal1" type="button">
-            <h3>Clash Royale Deck Analytics & Strategy Engine (In Progress)</h3>
-            <p>Click to view project details →</p>
+            <h3>Clash Royale Deck Analytics and Strategy Engine</h3>
+            <p>Click to view project details -</p>
           </button>
 
           <button class="card" data-modal="modal2" type="button">
-            <h3>Clothing Retail Store DBMS (Java, Oracle, SQL, Swing/JDBC)</h3>
-            <p>Click to view project details →</p>
+            <h3>Clothing Retail Store DBMS</h3>
+            <p>Click to view project details -</p>
           </button>
 
           <button class="card" data-modal="modal3" type="button">
-            <h3>CPU + ALU Design (VHDL, FPGA)</h3>
-            <p>Click to view project details →</p>
+            <h3>CPU plus ALU Design (VHDL, FPGA)</h3>
+            <p>Click to view project details -</p>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- RESUME -->
-    <section id="resume" class="section surface">
+    <section id="resume" class="section section-reveal">
       <div class="container">
         <h2 class="h2">Resume</h2>
         <p class="text muted">Download my resume:</p>
@@ -135,53 +175,41 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact" class="section surface section-reveal">
       <div class="container">
         <h2 class="h2">Contact</h2>
         <div class="contact">
-            <div><a href="mailto:ignanaseelan04@gmail.com">ignanaseelan04@gmail.com</a></div>
-            <div>647-988-4767</div>
-            <div><a href="https://www.linkedin.com/in/immanuelgnanaseelan/" target="_blank" rel="noopener">LinkedIn</a></div>
-            <div><a href="https://github.com/immanuelgn" target="_blank" rel="noopener">GitHub</a></div>
+          <div><a href="mailto:ignanaseelan04@gmail.com">ignanaseelan04@gmail.com</a></div>
+          <div>647-988-4767</div>
+          <div><a href="https://www.linkedin.com/in/immanuelgnanaseelan/" target="_blank" rel="noopener">LinkedIn</a></div>
+          <div><a href="https://github.com/immanuelgn" target="_blank" rel="noopener">GitHub</a></div>
         </div>
       </div>
     </section>
   </main>
 
-<!-- MODAL 1 -->
-<div class="modal" id="modal1" aria-hidden="true">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Clash Royale Deck Analytics & Strategy Engine modal">
-    <button class="x" data-close aria-label="Close">&times;</button>
-
-    <h2 class="h2">Clash Royale Deck Analytics & Strategy Engine (In Progress)</h2>
-
-    <div class="frame">
-      <img
-        src="Assets/clash-royale-preview.png"
-        alt="Clash Royale Deck Analytics Preview"
-        style="width:100%; height:100%; object-fit:contain;"
-      />
+  <div class="modal" id="modal1" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-label="Clash Royale Deck Analytics and Strategy Engine modal">
+      <button class="x" data-close aria-label="Close">&times;</button>
+      <h2 class="h2">Clash Royale Deck Analytics and Strategy Engine</h2>
+      <div class="frame">
+        <img src="Assets/clash-royale-preview.png" alt="Clash Royale Deck Analytics Preview" class="project-image" />
+      </div>
+      <p class="text muted">
+        Full-stack analytics engine that evaluates Clash Royale decks using card metadata, elixir balance,
+        role distribution, and coverage heuristics. Built with ASP.NET Core REST APIs and visualized through
+        frontend charts to surface synergy scores, deck classification, and matchup insights.
+      </p>
+      <p class="text muted">
+        Current focus includes improving synergy breakdowns, matchup modeling, and expanding strategic metrics.
+      </p>
     </div>
-
-    <p class="text muted">
-      Full-stack analytics engine that evaluates Clash Royale decks using real card metadata, elixir balance,
-      role distribution, and coverage heuristics. Built with ASP.NET Core REST APIs and visualized through
-      frontend charts to surface synergy scores, deck classification, and matchup insights.
-    </p>
-
-    <p class="text muted">
-      Current focus includes improving synergy breakdowns, matchup modeling, and expanding strategic metrics.
-    </p>
   </div>
-</div>
 
-  <!-- MODAL 2 (YouTube demo) -->
   <div class="modal" id="modal2" aria-hidden="true">
     <div class="modal-box" role="dialog" aria-modal="true" aria-label="Retail DBMS modal">
       <button class="x" data-close aria-label="Close">&times;</button>
       <h2 class="h2">Clothing Retail Store DBMS (Java, Oracle, SQL, Swing/JDBC)</h2>
-
       <div class="frame">
         <iframe
           class="embed"
@@ -191,29 +219,22 @@
           allowfullscreen>
         </iframe>
       </div>
-
       <p class="text muted">
-        BCNF-normalized Oracle database with constraints + sample data, and a Java Swing GUI using JDBC for schema management,
-        CRUD workflows, table browsing, and report-style queries (joins + aggregation).
+        BCNF-normalized Oracle database with constraints and sample data, and a Java Swing GUI using JDBC for schema management,
+        CRUD workflows, table browsing, and report-style queries (joins and aggregation).
       </p>
     </div>
   </div>
 
-  <!-- MODAL 3 -->
   <div class="modal" id="modal3" aria-hidden="true">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-label="CPU + ALU modal">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-label="CPU plus ALU modal">
       <button class="x" data-close aria-label="Close">&times;</button>
-      <h2 class="h2">CPU + ALU Design (VHDL, FPGA)</h2>
-
-      <div class="frame">
-        
-      </div>
-
+      <h2 class="h2">CPU plus ALU Design (VHDL, FPGA)</h2>
+      <div class="frame"></div>
       <p class="text muted">
-        CPU architecture + ALU implemented in VHDL with FSM/control logic, registers, and verified on FPGA with output display.
+        CPU architecture plus ALU implemented in VHDL with FSM and control logic, registers, and FPGA validation.
       </p>
     </div>
   </div>
-
 </body>
 </html>
