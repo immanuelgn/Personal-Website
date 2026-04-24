@@ -160,7 +160,7 @@
           </button>
 
           <button class="card" data-modal="modal3" type="button">
-            <h3>CPU plus ALU Design (VHDL, FPGA)</h3>
+            <h3>MOSFET Amplifier Design Project (KiCad, SPICE)</h3>
             <p>Click to view project details -</p>
           </button>
         </div>
@@ -227,12 +227,19 @@
   </div>
 
   <div class="modal" id="modal3" aria-hidden="true">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-label="CPU plus ALU modal">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-label="MOSFET amplifier design modal">
       <button class="x" data-close aria-label="Close">&times;</button>
-      <h2 class="h2">CPU plus ALU Design (VHDL, FPGA)</h2>
-      <div class="frame"></div>
+      <h2 class="h2">MOSFET Amplifier Design Project (KiCad, SPICE)</h2>
+      <div class="frame">
+        <img src="Assets/mosfet-final-schematic.png" alt="Final MOSFET amplifier schematic" class="project-image" />
+      </div>
       <p class="text muted">
-        CPU architecture plus ALU implemented in VHDL with FSM and control logic, registers, and FPGA validation.
+        Designed and simulated a three-stage MOSFET-only amplifier using two common-source gain stages with PMOS active loads,
+        followed by a common-drain output buffer. The final schematic shown above was implemented and validated in simulation.
+      </p>
+      <p class="text muted">
+        Key results: 68.5 dB low-frequency gain, 0.761 mW total DC power, and 128.4 uA max branch current under a 3.3 V supply.
+        I also documented performance trade-offs such as reduced bandwidth from parasitic capacitance and Miller effect.
       </p>
     </div>
   </div>
