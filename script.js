@@ -92,3 +92,23 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
+
+
+// Contact form: open prefilled email draft
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("contact-name")?.value.trim() || "";
+    const email = document.getElementById("contact-email")?.value.trim() || "";
+    const message = document.getElementById("contact-message")?.value.trim() || "";
+
+    const subject = encodeURIComponent(`Portfolio Contact from ${name || "Visitor"}`);
+    const body = encodeURIComponent(`Name: ${name}
+Email: ${email}
+
+Message:
+${message}`);
+    window.location.href = `mailto:ignanaseelan04@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
