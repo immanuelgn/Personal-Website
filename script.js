@@ -92,3 +92,59 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
+
+
+// Contact form AJAX submit (no redirect page)
+const contactForm = document.getElementById("contact-form");
+const statusEl = document.getElementById("form-status");
+const submitBtn = document.getElementById("contact-submit");
+
+if (contactForm) {
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/ignanaseelan04@gmail.com";
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("contact-email")?.value.trim() || "";
+    const message = document.getElementById("contact-message")?.value.trim() || "";
+
+    if (!email || !message) {
+      if (statusEl) statusEl.textContent = "Please fill in your email and message.";
+      return;
+    }
+
+    if (submitBtn) submitBtn.disabled = true;
+    if (statusEl) statusEl.textContent = "Sending...";
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          message,
+          _subject: "New Portfolio Contact Form Message",
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data?.success === "true") {
+        if (statusEl) statusEl.textContent = "Message sent. Thanks for reaching out.";
+        contactForm.reset();
+      } else {
+        throw new Error("Submit failed");
+      }
+    } catch (err) {
+      if (statusEl) {
+        statusEl.textContent = "Could not send from browser. Please email me directly at ignanaseelan04@gmail.com.";
+      }
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+}
