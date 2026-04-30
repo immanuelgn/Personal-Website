@@ -133,10 +133,11 @@ if (contactForm) {
       });
 
       const data = await res.json();
-      if (res.ok && data?.success === "true") {
+      if (res.ok && data?.success === true) {
         if (statusEl) statusEl.textContent = "Message sent. Thanks for reaching out.";
         contactForm.reset();
       } else {
+        if (statusEl) statusEl.textContent = data?.message || "Could not send right now. Please email me directly at ignanaseelan04@gmail.com.";
         throw new Error("Submit failed");
       }
     } catch (err) {
