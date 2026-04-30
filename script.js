@@ -100,7 +100,7 @@ const statusEl = document.getElementById("form-status");
 const submitBtn = document.getElementById("contact-submit");
 
 if (contactForm) {
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/ignanaseelan04@gmail.com";
+  const FORM_ENDPOINT = "/api/contact";
 
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -141,10 +141,11 @@ if (contactForm) {
       }
     } catch (err) {
       if (statusEl) {
-        statusEl.textContent = "Could not send from browser. Please email me directly at ignanaseelan04@gmail.com.";
+        statusEl.textContent = "Could not send right now. Please email me directly at ignanaseelan04@gmail.com.";
       }
     } finally {
       if (submitBtn) submitBtn.disabled = false;
     }
   });
 }
+
