@@ -175,7 +175,7 @@
       <div class="container">
         <h2 class="h2">Contact</h2>
         <div class="contact-wrap">
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form" id="contact-form" action="https://formsubmit.co/ignanaseelan04@gmail.com" method="POST">
             <div class="form-grid">
               <label>
                 <span>Name</span>
@@ -190,6 +190,9 @@
               <span>Message</span>
               <textarea id="contact-message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
             </label>
+            <input type="hidden" name="_subject" value="New Portfolio Contact Form Message" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
             <button class="btn" type="submit">Send Email</button>
           </form>
 
