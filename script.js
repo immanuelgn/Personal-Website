@@ -94,11 +94,11 @@ const sectionObserver = new IntersectionObserver(
 sections.forEach((section) => sectionObserver.observe(section));
 
 // Hero particles and subtle parallax motion
-const heroParticles = document.getElementById("hero-particles");
+const heroParticles = document.getElementById("bg-dots");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (heroParticles && !prefersReducedMotion) {
-  const dotCount = window.innerWidth < 640 ? 18 : 30;
+  const dotCount = window.innerWidth < 640 ? 36 : 64;
   const colors = ["rgba(216,161,59,0.9)", "rgba(134,176,160,0.85)", "rgba(196,74,59,0.8)", "rgba(239,233,223,0.7)"];
 
   for (let i = 0; i < dotCount; i += 1) {

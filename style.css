@@ -69,6 +69,14 @@ main,
   z-index: 1;
 }
 
+.bg-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
 main::before {
   content: "";
   position: absolute;
@@ -247,12 +255,6 @@ a:hover {
 
 .hero-rings {
   display: none;
-}
-
-.hero-particles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
 }
 
 .particle {
