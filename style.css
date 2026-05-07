@@ -1,18 +1,16 @@
 :root {
-  --bg: #0c1118;
-  --bg-soft: #121a24;
-  --surface: rgba(18, 27, 37, 0.8);
-  --surface-2: rgba(23, 33, 45, 0.9);
+  --bg: #121315;
+  --bg-soft: #1a1b20;
+  --surface: rgba(28, 30, 36, 0.8);
+  --surface-2: rgba(32, 34, 40, 0.9);
   --border: rgba(255, 255, 255, 0.14);
-  --text: #e8eef5;
-  --muted: #aab8c8;
-  --accent: #4ecdc4;
-  --accent-2: #f2b35d;
-  --accent-3: #7e8dff;
+  --text: #efe9df;
+  --muted: #c1b6a6;
+  --accent: #d8a13b;
+  --accent-2: #c44a3b;
+  --accent-3: #86b0a0;
   --shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
   --radius: 18px;
-  --mx: 50%;
-  --my: 35%;
 }
 
 * {
@@ -29,9 +27,9 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(920px 520px at 0% -5%, rgba(242, 179, 93, 0.14), transparent 62%),
-    radial-gradient(980px 620px at 100% 8%, rgba(78, 205, 196, 0.13), transparent 64%),
-    linear-gradient(180deg, #0f1620 0%, var(--bg) 100%);
+    radial-gradient(920px 520px at 0% -5%, rgba(196, 74, 59, 0.18), transparent 62%),
+    radial-gradient(980px 620px at 100% 8%, rgba(134, 176, 160, 0.16), transparent 64%),
+    linear-gradient(180deg, #181919 0%, var(--bg) 100%);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -55,13 +53,12 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.55;
+  opacity: 0.58;
   background:
-    radial-gradient(520px 520px at var(--mx) var(--my), rgba(78, 205, 196, 0.16), transparent 68%),
-    radial-gradient(420px 420px at calc(var(--mx) - 14%) calc(var(--my) + 10%), rgba(242, 179, 93, 0.13), transparent 72%),
-    repeating-radial-gradient(circle at var(--mx) var(--my), rgba(242, 179, 93, 0.13) 0 2px, rgba(242, 179, 93, 0) 2px 24px);
-  transition: background-position 0.12s linear;
-  animation: ambient-drift 18s ease-in-out infinite;
+    radial-gradient(520px 520px at 22% 28%, rgba(196, 74, 59, 0.18), transparent 68%),
+    radial-gradient(460px 460px at 74% 58%, rgba(134, 176, 160, 0.16), transparent 70%),
+    repeating-radial-gradient(circle at 52% 42%, rgba(216, 161, 59, 0.14) 0 2px, rgba(216, 161, 59, 0) 2px 24px);
+  animation: ambient-drift 20s ease-in-out infinite;
 }
 
 main,
@@ -203,7 +200,7 @@ a:hover {
 .hero-orbit {
   position: absolute;
   border-radius: 999px;
-  border: 1px solid rgba(242, 179, 93, 0.16);
+  border: 1px solid rgba(216, 161, 59, 0.2);
   transform-origin: center;
 }
 
@@ -220,7 +217,7 @@ a:hover {
   height: min(42vw, 480px);
   left: 34%;
   top: 18%;
-  border-color: rgba(78, 205, 196, 0.16);
+  border-color: rgba(134, 176, 160, 0.2);
   animation: orbit-spin-reverse 18s linear infinite;
 }
 
@@ -229,7 +226,7 @@ a:hover {
   height: min(30vw, 340px);
   left: 40%;
   top: 24%;
-  border-color: rgba(126, 141, 255, 0.18);
+  border-color: rgba(196, 74, 59, 0.2);
   animation: orbit-spin 13s linear infinite;
 }
 
@@ -244,8 +241,8 @@ a:hover {
   background:
     repeating-radial-gradient(
       circle at center,
-      rgba(242, 179, 93, 0.22) 0 2px,
-      rgba(242, 179, 93, 0) 2px 16px
+      rgba(216, 161, 59, 0.2) 0 2px,
+      rgba(216, 161, 59, 0) 2px 16px
     );
   filter: blur(0.4px);
   animation: rings-breathe 8s ease-in-out infinite;
@@ -691,9 +688,11 @@ a:hover {
 @keyframes ambient-drift {
   0%, 100% {
     opacity: 0.48;
+    transform: translate3d(0, 0, 0);
   }
   50% {
     opacity: 0.62;
+    transform: translate3d(18px, -10px, 0);
   }
 }
 

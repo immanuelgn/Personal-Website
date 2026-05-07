@@ -95,12 +95,11 @@ sections.forEach((section) => sectionObserver.observe(section));
 
 // Hero particles and subtle parallax motion
 const heroParticles = document.getElementById("hero-particles");
-const heroOrbits = Array.from(document.querySelectorAll(".hero-orbit"));
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (heroParticles && !prefersReducedMotion) {
   const dotCount = window.innerWidth < 640 ? 18 : 30;
-  const colors = ["rgba(242,179,93,0.9)", "rgba(78,205,196,0.85)", "rgba(222,232,245,0.75)"];
+  const colors = ["rgba(216,161,59,0.9)", "rgba(134,176,160,0.85)", "rgba(196,74,59,0.8)", "rgba(239,233,223,0.7)"];
 
   for (let i = 0; i < dotCount; i += 1) {
     const dot = document.createElement("span");
@@ -118,43 +117,6 @@ if (heroParticles && !prefersReducedMotion) {
     dot.style.setProperty("--drift", `${(Math.random() - 0.5) * 42}px`);
     heroParticles.appendChild(dot);
   }
-}
-
-if (!prefersReducedMotion) {
-  let rafId = null;
-  let nextX = window.innerWidth * 0.5;
-  let nextY = window.innerHeight * 0.35;
-
-  const applyPointerField = () => {
-    const xPct = (nextX / window.innerWidth) * 100;
-    const yPct = (nextY / window.innerHeight) * 100;
-    document.documentElement.style.setProperty("--mx", `${xPct}%`);
-    document.documentElement.style.setProperty("--my", `${yPct}%`);
-    rafId = null;
-  };
-
-  const queuePointerField = (clientX, clientY) => {
-    nextX = clientX;
-    nextY = clientY;
-    if (rafId !== null) return;
-    rafId = window.requestAnimationFrame(applyPointerField);
-  };
-
-  window.addEventListener("mousemove", (event) => {
-    const xRatio = (event.clientX / window.innerWidth - 0.5) * 2;
-    const yRatio = (event.clientY / window.innerHeight - 0.5) * 2;
-    queuePointerField(event.clientX, event.clientY);
-
-    heroOrbits.forEach((orbit, i) => {
-      const xMove = (i + 1) * 4 * xRatio;
-      const yMove = (i + 1) * 3 * yRatio;
-      orbit.style.translate = `${xMove}px ${yMove}px`;
-    });
-  });
-
-  window.addEventListener("mouseleave", () => {
-    queuePointerField(window.innerWidth * 0.5, window.innerHeight * 0.35);
-  });
 }
 
 
