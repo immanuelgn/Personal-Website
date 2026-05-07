@@ -1,14 +1,14 @@
 :root {
-  --bg: #121315;
-  --bg-soft: #1a1b20;
-  --surface: rgba(28, 30, 36, 0.8);
-  --surface-2: rgba(32, 34, 40, 0.9);
+  --bg: #141416;
+  --bg-soft: #1b1c20;
+  --surface: rgba(25, 27, 32, 0.82);
+  --surface-2: rgba(33, 35, 41, 0.92);
   --border: rgba(255, 255, 255, 0.14);
-  --text: #efe9df;
-  --muted: #c1b6a6;
-  --accent: #d8a13b;
-  --accent-2: #c44a3b;
-  --accent-3: #86b0a0;
+  --text: #f1ece3;
+  --muted: #c9bba7;
+  --accent: #d9a63a;
+  --accent-2: #b23d33;
+  --accent-3: #7da998;
   --shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
   --radius: 18px;
 }
@@ -27,9 +27,9 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(920px 520px at 0% -5%, rgba(196, 74, 59, 0.18), transparent 62%),
-    radial-gradient(980px 620px at 100% 8%, rgba(134, 176, 160, 0.16), transparent 64%),
-    linear-gradient(180deg, #181919 0%, var(--bg) 100%);
+    radial-gradient(960px 540px at -10% 0%, rgba(178, 61, 51, 0.2), transparent 62%),
+    radial-gradient(980px 640px at 100% 10%, rgba(125, 169, 152, 0.2), transparent 64%),
+    linear-gradient(180deg, #171719 0%, var(--bg) 100%);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -39,11 +39,13 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(circle at 50% 10%, rgba(0, 0, 0, 0.8), transparent 75%);
+  background:
+    repeating-linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0.028) 0 3px,
+      rgba(255, 255, 255, 0) 3px 56px
+    );
+  mask-image: radial-gradient(circle at 50% 12%, rgba(0, 0, 0, 0.86), transparent 78%);
   z-index: 0;
 }
 
@@ -53,12 +55,15 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.58;
+  opacity: 0.66;
   background:
-    radial-gradient(520px 520px at 22% 28%, rgba(196, 74, 59, 0.18), transparent 68%),
-    radial-gradient(460px 460px at 74% 58%, rgba(134, 176, 160, 0.16), transparent 70%),
-    repeating-radial-gradient(circle at 52% 42%, rgba(216, 161, 59, 0.14) 0 2px, rgba(216, 161, 59, 0) 2px 24px);
-  animation: ambient-drift 20s ease-in-out infinite;
+    repeating-radial-gradient(circle at 26% 38%, rgba(217, 166, 58, 0.15) 0 2px, rgba(217, 166, 58, 0) 2px 26px),
+    repeating-radial-gradient(circle at 68% 34%, rgba(178, 61, 51, 0.13) 0 2px, rgba(178, 61, 51, 0) 2px 22px),
+    repeating-radial-gradient(circle at 80% 72%, rgba(125, 169, 152, 0.12) 0 2px, rgba(125, 169, 152, 0) 2px 30px),
+    radial-gradient(560px 560px at 18% 28%, rgba(178, 61, 51, 0.16), transparent 72%),
+    radial-gradient(620px 620px at 78% 44%, rgba(125, 169, 152, 0.12), transparent 74%);
+  background-size: 120% 120%, 120% 120%, 140% 140%, auto, auto;
+  animation: ring-sweep 26s linear infinite;
 }
 
 main,
@@ -133,7 +138,7 @@ a:hover {
   padding: 10px 14px;
   border-radius: 15px;
   border: 1px solid var(--border);
-  background: rgba(11, 17, 25, 0.82);
+  background: rgba(18, 20, 25, 0.86);
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
@@ -145,11 +150,11 @@ a:hover {
 .brand {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.98rem;
-  color: #f9f2e7;
+  color: #f6efe4;
   padding: 8px 12px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(140deg, rgba(126, 141, 255, 0.2), rgba(78, 205, 196, 0.16));
+  background: linear-gradient(140deg, rgba(178, 61, 51, 0.26), rgba(125, 169, 152, 0.2));
 }
 
 .links {
@@ -170,7 +175,7 @@ a:hover {
 
 .links a:hover,
 .links a.active {
-  background: rgba(78, 205, 196, 0.16);
+  background: rgba(125, 169, 152, 0.2);
   transform: translateY(-1px);
 }
 
@@ -205,39 +210,39 @@ a:hover {
 }
 
 .hero-orbit-1 {
-  width: min(54vw, 620px);
-  height: min(54vw, 620px);
-  left: 26%;
-  top: 8%;
-  animation: orbit-spin 24s linear infinite;
+  width: min(34vw, 400px);
+  height: min(34vw, 400px);
+  left: 56%;
+  top: 18%;
+  animation: orbit-spin 20s linear infinite;
 }
 
 .hero-orbit-2 {
-  width: min(42vw, 480px);
-  height: min(42vw, 480px);
-  left: 34%;
-  top: 18%;
+  width: min(28vw, 330px);
+  height: min(28vw, 330px);
+  left: 63%;
+  top: 26%;
   border-color: rgba(134, 176, 160, 0.2);
-  animation: orbit-spin-reverse 18s linear infinite;
+  animation: orbit-spin-reverse 14s linear infinite;
 }
 
 .hero-orbit-3 {
-  width: min(30vw, 340px);
-  height: min(30vw, 340px);
-  left: 40%;
-  top: 24%;
+  width: min(22vw, 260px);
+  height: min(22vw, 260px);
+  left: 69%;
+  top: 31%;
   border-color: rgba(196, 74, 59, 0.2);
-  animation: orbit-spin 13s linear infinite;
+  animation: orbit-spin 11s linear infinite;
 }
 
 .hero-rings {
   position: absolute;
-  left: 12%;
-  top: 14%;
-  width: min(48vw, 540px);
+  left: 44%;
+  top: 10%;
+  width: min(44vw, 520px);
   aspect-ratio: 1 / 1;
   border-radius: 999px;
-  opacity: 0.32;
+  opacity: 0.28;
   background:
     repeating-radial-gradient(
       circle at center,
@@ -245,7 +250,7 @@ a:hover {
       rgba(216, 161, 59, 0) 2px 16px
     );
   filter: blur(0.4px);
-  animation: rings-breathe 8s ease-in-out infinite;
+  animation: rings-breathe 6.5s ease-in-out infinite;
 }
 
 .hero-particles {
@@ -309,16 +314,16 @@ a:hover {
   padding: 11px 18px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: linear-gradient(120deg, rgba(78, 205, 196, 0.38), rgba(126, 141, 255, 0.32));
+  background: linear-gradient(120deg, rgba(178, 61, 51, 0.44), rgba(217, 166, 58, 0.36), rgba(125, 169, 152, 0.34));
   color: #f7fbff;
   font-weight: 700;
-  box-shadow: 0 10px 30px rgba(78, 205, 196, 0.2);
+  box-shadow: 0 10px 30px rgba(178, 61, 51, 0.22);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(78, 205, 196, 0.28);
+  box-shadow: 0 14px 34px rgba(217, 166, 58, 0.26);
 }
 
 .btn.ghost {
@@ -686,13 +691,22 @@ a:hover {
 }
 
 @keyframes ambient-drift {
-  0%, 100% {
-    opacity: 0.48;
-    transform: translate3d(0, 0, 0);
+  0%, 100% { opacity: 0.58; }
+  50% { opacity: 0.72; }
+}
+
+@keyframes ring-sweep {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, center, center;
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    opacity: 0.62;
-    transform: translate3d(18px, -10px, 0);
+    background-position: -6% 2%, 4% -3%, -5% 4%, center, center;
+    transform: translate3d(0, -1.5%, 0) scale(1.02);
+  }
+  100% {
+    background-position: -12% 4%, 8% -6%, -10% 8%, center, center;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -703,24 +717,24 @@ a:hover {
   }
 
   .hero-rings {
-    left: -8%;
-    top: 24%;
-    width: min(72vw, 480px);
+    left: 56%;
+    top: 18%;
+    width: min(56vw, 420px);
   }
 
   .hero-orbit-1 {
-    left: 10%;
-    top: 18%;
+    left: 60%;
+    top: 24%;
   }
 
   .hero-orbit-2 {
-    left: 20%;
-    top: 26%;
+    left: 66%;
+    top: 30%;
   }
 
   .hero-orbit-3 {
-    left: 28%;
-    top: 34%;
+    left: 70%;
+    top: 36%;
   }
 
   .project-grid {
@@ -820,11 +834,11 @@ a:hover {
   }
 
   .hero-rings {
-    opacity: 0.2;
+    opacity: 0.14;
   }
 
   .hero-orbit {
-    opacity: 0.5;
+    opacity: 0.28;
   }
 }
 
