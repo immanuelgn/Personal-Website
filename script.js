@@ -93,6 +93,46 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+// Hero particles and subtle parallax motion
+const heroParticles = document.getElementById("hero-particles");
+const heroOrbits = Array.from(document.querySelectorAll(".hero-orbit"));
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (heroParticles && !prefersReducedMotion) {
+  const dotCount = window.innerWidth < 640 ? 18 : 30;
+  const colors = ["rgba(242,179,93,0.9)", "rgba(78,205,196,0.85)", "rgba(222,232,245,0.75)"];
+
+  for (let i = 0; i < dotCount; i += 1) {
+    const dot = document.createElement("span");
+    dot.className = "particle";
+    const size = Math.random() * 4 + 1.5;
+    const duration = Math.random() * 12 + 11;
+    const delay = Math.random() * -duration;
+    dot.style.left = `${Math.random() * 100}%`;
+    dot.style.top = `${Math.random() * 100}%`;
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+    dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+    dot.style.animationDuration = `${duration}s`;
+    dot.style.animationDelay = `${delay}s`;
+    dot.style.setProperty("--drift", `${(Math.random() - 0.5) * 42}px`);
+    heroParticles.appendChild(dot);
+  }
+}
+
+if (!prefersReducedMotion) {
+  window.addEventListener("mousemove", (event) => {
+    const xRatio = (event.clientX / window.innerWidth - 0.5) * 2;
+    const yRatio = (event.clientY / window.innerHeight - 0.5) * 2;
+
+    heroOrbits.forEach((orbit, i) => {
+      const xMove = (i + 1) * 4 * xRatio;
+      const yMove = (i + 1) * 3 * yRatio;
+      orbit.style.translate = `${xMove}px ${yMove}px`;
+    });
+  });
+}
+
 
 // Contact form AJAX submit (no redirect page)
 const contactForm = document.getElementById("contact-form");
