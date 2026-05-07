@@ -121,15 +121,39 @@ if (heroParticles && !prefersReducedMotion) {
 }
 
 if (!prefersReducedMotion) {
+  let rafId = null;
+  let nextX = window.innerWidth * 0.5;
+  let nextY = window.innerHeight * 0.35;
+
+  const applyPointerField = () => {
+    const xPct = (nextX / window.innerWidth) * 100;
+    const yPct = (nextY / window.innerHeight) * 100;
+    document.documentElement.style.setProperty("--mx", `${xPct}%`);
+    document.documentElement.style.setProperty("--my", `${yPct}%`);
+    rafId = null;
+  };
+
+  const queuePointerField = (clientX, clientY) => {
+    nextX = clientX;
+    nextY = clientY;
+    if (rafId !== null) return;
+    rafId = window.requestAnimationFrame(applyPointerField);
+  };
+
   window.addEventListener("mousemove", (event) => {
     const xRatio = (event.clientX / window.innerWidth - 0.5) * 2;
     const yRatio = (event.clientY / window.innerHeight - 0.5) * 2;
+    queuePointerField(event.clientX, event.clientY);
 
     heroOrbits.forEach((orbit, i) => {
       const xMove = (i + 1) * 4 * xRatio;
       const yMove = (i + 1) * 3 * yRatio;
       orbit.style.translate = `${xMove}px ${yMove}px`;
     });
+  });
+
+  window.addEventListener("mouseleave", () => {
+    queuePointerField(window.innerWidth * 0.5, window.innerHeight * 0.35);
   });
 }
 
